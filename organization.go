@@ -57,7 +57,7 @@ func (c *Client) OrganizationListWithOptions(ro RequestOptions) ([]Organization,
 func (c *Client) OrganizationSearch(query string, limit int) ([]Organization, error) {
 	var organizations []Organization
 
-	req, err := c.NewRequest(http.MethodGet, fmt.Sprintf("%s%s", c.Url, fmt.Sprintf("/api/v1/organizations/search?query=%slimit=%d", url.QueryEscape(query), limit)), nil)
+	req, err := c.NewRequest(http.MethodGet, fmt.Sprintf("%s%s", c.Url, fmt.Sprintf("/api/v1/organizations/search?query=%s&limit=%d", url.QueryEscape(query), limit)), nil)
 	if err != nil {
 		return organizations, err
 	}
