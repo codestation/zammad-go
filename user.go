@@ -17,7 +17,7 @@ type User struct {
 	Email          string    `json:"email,omitempty"`
 	Web            string    `json:"web,omitempty"`
 	LastLogin      time.Time `json:"last_login,omitempty"`
-	GroupIDs       []int     `json:"group_ids,omitempty"`
+	RoleIDs        []int     `json:"role_ids,omitempty"`
 }
 
 // UserMe returns the current authenticated user.
