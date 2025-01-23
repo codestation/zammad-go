@@ -7,16 +7,16 @@ import (
 )
 
 type Role struct {
-	ID              int               `json:"id,omitempty"`
-	Name            string            `json:"name"`
-	Preferences     map[string]string `json:"preferences,omitempty"`
-	DefaultAtSignup bool              `json:"default_at_signup"`
-	Active          bool              `json:"active"`
-	Note            string            `json:"note,omitempty"`
-	UpdatedByID     int               `json:"updated_by_id"`
-	CreatedByID     int               `json:"created_by_id"`
-	CreatedAt       time.Time         `json:"created_at"`
-	UpdatedAt       time.Time         `json:"updated_at"`
+	ID              int            `json:"id,omitempty"`
+	Name            string         `json:"name"`
+	Preferences     map[string]any `json:"preferences,omitempty"`
+	DefaultAtSignup bool           `json:"default_at_signup"`
+	Active          bool           `json:"active"`
+	Note            string         `json:"note,omitempty"`
+	UpdatedByID     int            `json:"updated_by_id"`
+	CreatedByID     int            `json:"created_by_id"`
+	CreatedAt       time.Time      `json:"created_at"`
+	UpdatedAt       time.Time      `json:"updated_at"`
 }
 
 func (c *Client) RoleListResult(opts ...Option) *Result[Role] {

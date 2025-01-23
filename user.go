@@ -12,11 +12,12 @@ type User struct {
 	ID             int       `json:"id"`
 	OrganizationID int       `json:"organization_id"`
 	Login          string    `json:"login"`
-	Firstname      string    `json:"firstname"`
-	Lastname       string    `json:"lastname"`
-	Email          string    `json:"email"`
-	Web            string    `json:"web"`
-	LastLogin      time.Time `json:"last_login"`
+	Firstname      string    `json:"firstname,omitempty"`
+	Lastname       string    `json:"lastname,omitempty"`
+	Email          string    `json:"email,omitempty"`
+	Web            string    `json:"web,omitempty"`
+	LastLogin      time.Time `json:"last_login,omitempty"`
+	GroupIDs       []int     `json:"group_ids,omitempty"`
 }
 
 // UserMe returns the current authenticated user.
